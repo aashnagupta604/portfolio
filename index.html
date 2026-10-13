@@ -56,8 +56,26 @@
             flex-wrap: wrap;
         }
 
+        nav a {
+            transition: color 0.3s;
+        }
+
         nav a:hover {
             color: #54c8ff;
+        }
+
+        /* CONTACT TAB HIGHLIGHT */
+        nav .contact-link {
+            color: #54c8ff;
+            border: 1px solid #54c8ff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav .contact-link:hover {
+            background: #54c8ff;
+            color: #050611;
         }
 
         .gradient-text {
@@ -170,7 +188,7 @@
             opacity: 0.85;
         }
 
-        /* PORTFOLIO PAGE */
+        /* PORTFOLIO */
         .about-grid {
             max-width: 950px;
             margin: auto;
@@ -213,7 +231,7 @@
             margin-bottom: 16px;
         }
 
-        /* SIMPLE REGISTRATION FORM */
+        /* REGISTRATION FORM */
         .registration-box {
             max-width: 650px;
             margin: auto;
@@ -348,18 +366,63 @@
             color: #a5ffdc;
         }
 
-        /* BACK LINKS AND FOOTER */
+        /* BACK LINKS */
         .back-link {
             display: inline-block;
             margin-top: 25px;
             color: #54c8ff;
         }
 
+        /* CONTACT FOOTER */
         footer {
-            padding: 30px 8%;
+            padding: 45px 8%;
             text-align: center;
             color: #aaa6c7;
             border-top: 1px solid rgba(255,255,255,0.15);
+            scroll-margin-top: 20px;
+            background: rgba(5, 6, 17, 0.75);
+        }
+
+        .footer-title {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .footer-description {
+            color: #c8c5e0;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            padding: 11px 18px;
+            border: 1px solid rgba(84, 200, 255, 0.6);
+            border-radius: 25px;
+            color: #54c8ff;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #54c8ff;
+            color: #050611;
+            transform: translateY(-3px);
+        }
+
+        .footer-credit {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 14px;
+            line-height: 1.8;
         }
 
         /* MOBILE RESPONSIVENESS */
@@ -387,6 +450,7 @@
 
             nav {
                 justify-content: center;
+                gap: 12px;
             }
 
             .projects-grid {
@@ -404,6 +468,10 @@
             .registration-box {
                 padding: 18px;
             }
+
+            .footer-title {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -420,6 +488,7 @@
             <a href="#portfolio">My Portfolio</a>
             <a href="#registration">Registration</a>
             <a href="#product">Headphones</a>
+            <a href="#contact" class="contact-link">Contact Me</a>
         </nav>
     </header>
 
@@ -456,10 +525,8 @@
 
             <div class="projects-grid">
 
-                <!-- PROJECT 1 -->
                 <article class="project-card">
                     <div class="project-icon">🌌</div>
-
                     <h3>My Portfolio</h3>
 
                     <p>
@@ -472,10 +539,8 @@
                     </a>
                 </article>
 
-                <!-- PROJECT 2 -->
                 <article class="project-card">
                     <div class="project-icon">📝</div>
-
                     <h3>Registration Form</h3>
 
                     <p>
@@ -488,10 +553,8 @@
                     </a>
                 </article>
 
-                <!-- PROJECT 3 -->
                 <article class="project-card">
                     <div class="project-icon">🎧</div>
-
                     <h3>Headphones Product Page</h3>
 
                     <p>
@@ -530,9 +593,9 @@
                     <h3>Hey there! <span class="gradient-text">✨</span></h3>
 
                     <p>
-                        I'm <strong>Aashna Gupta</strong>, a student at Scaler School
-                        of Technology as a first year student pursuing CS and AI.
-                        Interested in technology, design and learning how things work.
+                        I'm <strong>Aashna Gupta</strong>, a first-year student at
+                        Scaler School of Technology pursuing CS and AI.
+                        I'm interested in technology, design and learning how things work.
                     </p>
 
                     <p>
@@ -557,7 +620,7 @@
             <a href="#projects" class="back-link">← Back to My Projects</a>
         </section>
 
-        <!-- BASIC REGISTRATION FORM -->
+        <!-- REGISTRATION FORM -->
         <section id="registration">
             <h2 class="section-title">
                 Registration <span class="gradient-text">Form</span>
@@ -568,7 +631,6 @@
             </p>
 
             <div class="registration-box">
-
                 <h3>Enter Your Details</h3>
 
                 <form id="registrationForm">
@@ -689,7 +751,6 @@
                 </div>
 
                 <div class="product-info">
-
                     <span class="offer-badge">✨ SPECIAL SHOWCASE OFFER</span>
 
                     <h3>Wireless Headphones 🎧</h3>
@@ -738,22 +799,58 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            © <span id="year"></span> Aashna Gupta.
-            Made with curiosity and a little stardust ✨
+    <!-- CONTACT ME FOOTER -->
+    <!-- Clicking Contact Me in the header brings visitors here -->
+    <footer id="contact">
+
+        <h2 class="footer-title">
+            Contact <span class="gradient-text">Me</span> ✨
+        </h2>
+
+        <p class="footer-description">
+            I'd love to connect with you!
+            Feel free to reach out through any of the links below.
         </p>
 
-        <p style="margin-top: 12px;">
-            <a href="mailto:aashnagupta604@gmail.com">Email</a>
-            &nbsp; | &nbsp;
-            <a href="https://github.com/aashnagupta604/portfolio"
-               target="_blank" rel="noopener noreferrer">GitHub</a>
-            &nbsp; | &nbsp;
-            <a href="https://www.instagram.com/aashna._512/"
-               target="_blank" rel="noopener noreferrer">Instagram</a>
-        </p>
+        <div class="contact-links">
+
+            <a href="mailto:aashnagupta604@gmail.com">
+                ✉️ Email Me
+            </a>
+
+            <a
+                href="https://github.com/aashnagupta604/portfolio"
+                target="_blank"
+                rel="noopener noreferrer">
+                💻 GitHub
+            </a>
+
+            <a
+                href="https://www.instagram.com/aashna._512/"
+                target="_blank"
+                rel="noopener noreferrer">
+                📸 Instagram
+            </a>
+
+        </div>
+
+        <div class="footer-credit">
+            <p>
+                © <span id="year"></span> Aashna Gupta.
+                Made with curiosity and a little stardust ✨
+            </p>
+
+            <p style="margin-top: 12px;">
+                Keep exploring. Keep creating. Keep shining! 🌌
+            </p>
+
+            <p style="margin-top: 18px;">
+                <a href="#home" style="color: #54c8ff;">
+                    ↑ Back to Top
+                </a>
+            </p>
+        </div>
+
     </footer>
 
     <script>
